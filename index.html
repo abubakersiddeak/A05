@@ -6,30 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Service </title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body class="bg-green-50 font-sans max-w-[1920px] mx-auto">
+<body class="bg-green-50  max-w-[1920px] mx-auto">
 
     <!-- Navbar -->
-    <header class="flex justify-between items-center bg-white shadow px-6 py-3 max-w-[1920px] h-[100px] mx-auto">
-        <div class="flex items-center gap-4">
-            <img src="assets/logo.png" alt="logo" class="w-10 h-10 rounded-full">
-            <span class="font-bold text-green-700 ">Emergency <br> Service</span>
+    <header
+        class="flex justify-between items-center bg-white shadow px-6 py-3 max-w-[1920px] h-[70px] lg:h-[100px] mx-auto sticky top-0 z-50 ">
+        <div class="flex items-center gap-2 lg:gap-4">
+
+            <img src="assets/logo.png" alt="logo" class="lg:w-10 lg:h-10 h-5 w-5 rounded-full">
+            <span class="font-bold text-green-700 text-[8px] lg:text-lg">Emergency <br> Service</span>
         </div>
 
-        <div class="flex items-center gap-6">
-            <div class="flex justify-center items-center gap-2 bg-[#41FF6B]/10 px-4 py-1 rounded-full">
-                <span class="text-red-500 font-semibold">0 </span>
-                <img class=" h-5 w-5" src="assets/heart.png" alt="heart logo">
+        <div class="flex items-center gap-2 lg:gap-6">
+            <div class="flex justify-center items-center gap-2 bg-[#41FF6B]/10 lg:px-4 px-2 py-1 rounded-full">
+                <span id="favIcon" class="font-semibold text-[8px] lg:text-lg">0 </span>
+                <img class="lg:h-5 lg:w-5 h-3 w-3" src="assets/heart.png" alt="heart logo">
             </div>
-            <div class="flex justify-center items-center gap-2  bg-[#41FF6B]/10 px-4 py-1 rounded-full">
-                <span class=" font-semibold">100 </span>
-                <img class=" h-5 w-5" src="assets/coin.png" alt="Coin logo">
+            <div class="flex justify-center items-center gap-2  bg-[#41FF6B]/10 lg:px-4 px-2  py-1 rounded-full">
+                <span id="coinCount" class="font-semibold text-[8px] lg:text-lg">100 </span>
+                <img class="lg:h-5 lg:w-5 h-3 w-3" src="assets/coin.png" alt="Coin logo">
             </div>
             <button
-                class="bg-green-500 text-white px-5 py-1 rounded-full shadow cursor-pointer hover:scale-90 duration-750">2
-                Copy</button>
+                class="bg-green-500 text-white lg:px-4 px-2  py-1 rounded-full shadow cursor-pointer hover:scale-90 duration-750 flex gap-2 text-[8px] lg:text-lg">
+                <p id="copy">0</p>
+                <p>Copied</p>
+            </button>
         </div>
     </header>
 
@@ -37,7 +42,7 @@
     <section
         class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-center text-white py-8 h-[239px] w-full">
         <div class="flex justify-center">
-            <img src="assets/logo.png" alt="logo" class="w-20 h-20 rounded-full ">
+            <img src="assets/logo-dark.png" alt="logo" class="w-20 h-20 rounded-full ">
         </div>
         <h1 class="text-2xl md:text-3xl font-bold mt-4 mb-4 ">Emergency Service Directory</h1>
         <p class="text-sm mt-1 font-bold">Government Emergency Services at Your Fingertip – A Project by Government of
@@ -46,366 +51,340 @@
     </section>
 
     <!-- Main Content -->
-    <main class="grid grid-cols-1 lg:grid-cols-4 gap-6 p-6 ">
+    <main class="grid grid-cols-1 lg:grid-cols-4 gap-6 p-6">
 
         <!-- Cards Section -->
-        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div id="cardContainer" class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="National Emergency Number" data-service-number="999">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">National Emergency Number</h2>
                     <p class="text-xl text-gray-500">National Emergency</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">999</p>
-                <span class="text-sm  bg-gray-100 w-10 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-10 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">All</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
 
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+            <!--  Police Helpline Number -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Police Helpline Number" data-service-number="999">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-blue-400/20"> <img class="h-10 w-10" src="assets/police.png"
-                                    alt="police logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-blue-400/20">
+                                <img class="h-10 w-10" src="assets/police.png" alt="police logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Police Helpline Number</h2>
                     <p class="text-xl text-gray-500">Police</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">999</p>
-                <span class="text-sm  bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Police</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Fire Service Number -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Fire Service Number" data-service-number="999">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/fire-service.png" alt="fire-service logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/fire-service.png" alt="fire-service logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Fire Service Number</h2>
                     <p class="text-xl text-gray-500">Fire</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">999</p>
-                <span class="text-sm  bg-gray-100 w-15 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-[45px] text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Fire </p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Ambulance Service -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Ambulance Service" data-service-number="1994999999">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/ambulance.png" alt="ambulance logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/ambulance.png" alt="ambulance logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Ambulance Service</h2>
                     <p class="text-xl text-gray-500">Ambulance</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">1994-999999</p>
-                <span class="text-sm  bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70 ">Health</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Women & Child Helpline -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Women & Child Helpline" data-service-number="109">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Women & Child Helpline </h2>
                     <p class="text-xl text-gray-500">Women & Child Helpline</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">109</p>
-                <span class="text-sm  bg-gray-100 w-15 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Help</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Anti-Corruption Helpline -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Anti-Corruption Helpline" data-service-number="106">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Anti-Corruption Helpline</h2>
                     <p class="text-xl text-gray-500">Anti-Corruption</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">106</p>
-                <span class="text-sm  bg-gray-100 w-15 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-16 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Govt.</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Electricity Helpline -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Electricity Helpline" data-service-number="16216">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Electricity Helpline</h2>
                     <p class="text-xl text-gray-500">Electricity Outage</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">16216</p>
-                <span class="text-sm  bg-gray-100 w-25 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Electricity</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Brac Helpline -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Brac Helpline" data-service-number="16445">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Brac Helpline</h2>
                     <p class="text-xl text-gray-500">Brac</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">16445</p>
-                <span class="text-sm  bg-gray-100 w-15 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-16 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">NGO</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-            <!-- Card -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between  h-[360px]">
+
+            <!-- Card: Bangladesh Railway Helpline -->
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
+                data-service-name="Bangladesh Railway Helpline" data-service-number="163">
                 <div>
                     <div class="flex justify-between items-start ">
-                        <div class="flex justify-between items-center gap-2  w-full">
-                            <div class=" p-2 rounded-xl bg-red-400/20"> <img class="h-10 w-10"
-                                    src="assets/emergency.png" alt="emergency logo">
+                        <div class="flex justify-between items-center gap-2 w-full">
+                            <div class="p-2 rounded-xl bg-red-400/20">
+                                <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-
                                 <button
-                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750">♡</button>
+                                    class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
-
                         </div>
-
-
                     </div>
-
                 </div>
                 <div>
                     <h2 class="font-bold text-2xl">Bangladesh Railway Helpline </h2>
                     <p class="text-xl text-gray-500">Bangladesh Railway</p>
                 </div>
                 <p class="text-2xl font-bold mt-4 ">163</p>
-                <span class="text-sm  bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
+                <span class="text-sm bg-gray-100 w-20 text-center px-2 py-1 rounded-full">
                     <p class="text-black/70">Travel</p>
                 </span>
                 <div class="flex gap-2 mt-4">
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2">📋
+                        class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
-                        class="cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1">📞
+                        class="call-btn cursor-pointer hover:scale-90 duration-750 flex-1 bg-green-500 text-white rounded-lg py-1 text-center">📞
                         Call</button>
                 </div>
             </div>
-
         </div>
 
         <!-- Call History Section -->
         <aside class="bg-white shadow rounded-xl p-4">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="font-bold">🕘 Call History</h3>
-                <button class="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Clear</button>
+                <button id="clearHistoryBtn"
+                    class="bg-green-500 text-white text-sm px-3 py-1 rounded-full">Clear</button>
             </div>
-            <ul class="space-y-2 text-sm">
-                <li class="flex justify-between bg-gray-100 px-2 py-4 rounded-lg"><span>Fire Service Number</span>
-                    <span>11:36:58
-                        AM</span>
-                </li>
+            <ul id=" historyList" class="space-y-2 text-sm">
 
+                <li class="flex flex-col gap-2 bg-gray-100 px-2 py-4 rounded-lg">
+                    <div class="flex justify-between"><span>Fire Service Number</span>
+                        <span>11:36:58 AM</span>
+                    </div>
+                    <p>999</p>
+                </li>
             </ul>
         </aside>
-
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+
+    </script>
 </body>
 
 </html>
