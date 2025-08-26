@@ -72,32 +72,10 @@ function handleCopyClick(event) {
   const card = event.currentTarget.closest(".card");
   const number = card.querySelector("p.text-2xl").textContent;
   const serviceName = card.querySelector("h2").textContent;
-
-  // Copy to clipboard
-  navigator.clipboard
-    .writeText(number)
-    .then(() => {
-      alert(`Copied ${serviceName} number: ${number}`);
-      copyCount++;
-      updateCounts();
-    })
-    .catch((err) => {
-      console.error("Failed to copy: ", err);
-      // Fallback method for copying
-      const textArea = document.createElement("textarea");
-      textArea.value = number;
-      document.body.appendChild(textArea);
-      textArea.select();
-      try {
-        document.execCommand("copy");
-        alert(`Copied ${serviceName} number: ${number}`);
-        copyCount++;
-        updateCounts();
-      } catch (err) {
-        alert("Failed to copy number. Please try again.");
-      }
-      document.body.removeChild(textArea);
-    });
+  navigator.clipboard.writeText(number);
+  alert(`Copied ${serviceName} number: ${number}`);
+  copyCount++;
+  document.getElementById("copy").innerText = copyCount;
 }
 
 // Handle call button click
