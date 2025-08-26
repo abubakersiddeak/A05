@@ -57,8 +57,7 @@
         <div id="cardContainer" class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
 
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="National Emergency Number" data-service-number="999">
+            <div class=" bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -66,7 +65,7 @@
                                 <img class="h-10 w-10" src="assets/emergency.png" alt="emergency logo">
                             </div>
                             <div>
-                                <button
+                                <button onclick="addFavourite()"
                                     class="text-gray-400 cursor-pointer text-2xl hover:scale-110 duration-750 heart-btn">♡</button>
                             </div>
                         </div>
@@ -81,7 +80,7 @@
                     <p class="text-black/70">All</p>
                 </span>
                 <div class="flex gap-2 mt-4">
-                    <button
+                    <button onclick="addCopy()"
                         class="cursor-pointer hover:scale-90 duration-750 flex-1 border border-gray-300 rounded-lg py-2 copy-btn">📋
                         Copy</button>
                     <button
@@ -91,8 +90,7 @@
             </div>
 
             <!--  Police Helpline Number -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Police Helpline Number" data-service-number="999">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -125,8 +123,7 @@
             </div>
 
             <!-- Card: Fire Service Number -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Fire Service Number" data-service-number="999">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -159,8 +156,7 @@
             </div>
 
             <!-- Card: Ambulance Service -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Ambulance Service" data-service-number="1994999999">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -193,8 +189,7 @@
             </div>
 
             <!-- Card: Women & Child Helpline -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Women & Child Helpline" data-service-number="109">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -227,8 +222,7 @@
             </div>
 
             <!-- Card: Anti-Corruption Helpline -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Anti-Corruption Helpline" data-service-number="106">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -261,8 +255,7 @@
             </div>
 
             <!-- Card: Electricity Helpline -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Electricity Helpline" data-service-number="16216">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -295,8 +288,7 @@
             </div>
 
             <!-- Card: Brac Helpline -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Brac Helpline" data-service-number="16445">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -329,8 +321,7 @@
             </div>
 
             <!-- Card: Bangladesh Railway Helpline -->
-            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card"
-                data-service-name="Bangladesh Railway Helpline" data-service-number="163">
+            <div class="bg-white shadow rounded-xl p-4 flex flex-col justify-between h-[360px] card">
                 <div>
                     <div class="flex justify-between items-start ">
                         <div class="flex justify-between items-center gap-2 w-full">
@@ -372,12 +363,7 @@
             </div>
             <ul id=" historyList" class="space-y-2 text-sm">
 
-                <li class="flex flex-col gap-2 bg-gray-100 px-2 py-4 rounded-lg">
-                    <div class="flex justify-between"><span>Fire Service Number</span>
-                        <span>11:36:58 AM</span>
-                    </div>
-                    <p>999</p>
-                </li>
+
             </ul>
         </aside>
     </main>
